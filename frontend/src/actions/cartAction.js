@@ -12,7 +12,7 @@ export const fetchCartItems = (alert) => async (dispatch) => {
         }
 
         const response = await axios.get(
-            "https://bitecart-backend-surya.onrender.com/api/v1/eats/cart/get-cart",
+            "https://bite-cart.onrender.com/api/v1/eats/cart/get-cart",
             {
                 headers: {
                     Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ export const addItemToCart=(foodItemId,restaurant,quantity,alert)=>async(dispatc
       const config = {
         headers: { Authorization: `Bearer ${token}` }, // Attach Auth Token
     };
-      const response=await axios.post("https://bitecart-backend-surya.onrender.com/api/v1/eats/cart/add-to-cart",{
+      const response=await axios.post("https://bite-cart.onrender.com/api/v1/eats/cart/add-to-cart",{
       userId: user._id,
       foodItemId,
       restaurantId: restaurant,
@@ -71,7 +71,7 @@ export const updateCartQuantity=(foodItemId,quantity,alert)=>async(dispatch,getS
         const config = {
             headers: { Authorization: `Bearer ${token}` },
         };
-        const response =await axios.post("https://bitecart-backend-surya.onrender.com/api/v1/eats/cart/update-cart-item",{
+        const response =await axios.post("https://bite-cart.onrender.com/api/v1/eats/cart/update-cart-item",{
         userId:user._id,
         foodItemId:foodItemId,
         quantity,
@@ -96,7 +96,7 @@ export const removeItemFromCart=(foodItemId)=>async(dispatch ,getState)=>{
             headers: { Authorization: `Bearer ${token}` },
             data: { userId: user._id, foodItemId }, // Axios `DELETE` method requires `data`
         };
-            const response=await axios.delete(`https://bitecart-backend-surya.onrender.com/api/v1/eats/cart/delete-cart-item`,config
+            const response=await axios.delete(`https://bite-cart.onrender.com/api/v1/eats/cart/delete-cart-item`,config
             );
             dispatch({
                 type:REMOVE_CART_ITEM,

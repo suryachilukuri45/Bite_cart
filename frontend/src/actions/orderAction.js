@@ -35,7 +35,7 @@ export const createOrder = (session_id) => async (dispatch) => {
         //     headers: { "Content-Type": "application/json" },
         // };
         const { data } = await axios.post(
-            "https://bitecart-backend-surya.onrender.com/api/v1/eats/orders/new",
+            "https://bite-cart.onrender.com/api/v1/eats/orders/new",
              { session_id }, 
              getAuthHeaders());
         dispatch({
@@ -56,7 +56,7 @@ export const payment = (items, restaurant) => async (dispatch) => {
         // const config = {
         //     headers: { "Content-Type": "application/json" },
         // };
-        const { data } = await axios.post("https://bitecart-backend-surya.onrender.com/api/v1/payment/process",
+        const { data } = await axios.post("https://bite-cart.onrender.com/api/v1/payment/process",
             {
                 items,
                 restaurant,
@@ -80,7 +80,7 @@ export const myOrders = () => async (dispatch) => {
         dispatch({
             type: MY_ORDER_REQUEST,
         });
-        const { data } = await axios.get(`https://bitecart-backend-surya.onrender.com/api/v1/eats/orders/me/myOrders`,getAuthHeaders());
+        const { data } = await axios.get(`https://bite-cart.onrender.com/api/v1/eats/orders/me/myOrders`,getAuthHeaders());
         dispatch({
             type: MY_ORDER_SUCCESS,
             payload: data.orders,
@@ -100,7 +100,7 @@ export const getOrderDetails = (id) => async (dispatch) => {
 
         dispatch({ type: ORDER_DETAILS_REQUEST });
 
-        const { data } = await axios.get(`https://bitecart-backend-surya.onrender.com/api/v1/eats/orders/${id}`,getAuthHeaders());
+        const { data } = await axios.get(`https://bite-cart.onrender.com/api/v1/eats/orders/${id}`,getAuthHeaders());
 
         dispatch({
 

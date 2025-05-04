@@ -3,7 +3,7 @@ import axios from "axios";
 export const getRestaurants =()=>{
     return async (dispatch)=>{
      try {  dispatch({type : ALL_RESTAURANTS_REQUEST});
-        let link =`https://bitecart-backend-surya.onrender.com/api/v1/eats/stores`;
+        let link =`https://bite-cart.onrender.com/api/v1/eats/stores`;
         const {data}=await axios.get(link);
         console.log(data);
         const {restaurants,count}=data;
