@@ -5,7 +5,7 @@ export default function Footer() {
     <>
     <footer>
         <p className='text-center'>
-            Food Delivery website 2024-25. All Rights Reserved by GSR..
+            Food Delivery website 2024-25. All Rights Reserved by SURYA..
         </p>
     </footer>
     
